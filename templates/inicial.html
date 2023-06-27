@@ -1,0 +1,119 @@
+<html><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-color: #334f53;
+        }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .title {
+      text-align: center;
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color:white;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .content {
+      display: flex;
+      align-items: center;
+    }
+    .image {
+      width: 400px;
+      height: auto;
+      margin-right: 20px;
+    }
+    .text {
+      font-size: 18px;
+    }
+    .button {
+      display: block;
+      padding: 10px 20px;
+      background-color: white;
+      color: black;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    h1{
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        
+    }
+    h4{
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    p{
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .tipo{
+        background-color: aquamarine;
+        text-align: center;
+        height: 50px;
+    }
+    #boat{
+        color: black;
+        padding: 5px;
+        
+    }
+
+        @media (max-width: 600px) {
+            .rectangle {
+                width: 100%;
+            }
+            .question {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: white;
+            font-family: arial;
+        }
+            .button{
+             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+            }
+
+        }
+    </style>
+<style type="text/css"></style><style type="text/css" id="operaUserStyle"></style>
+</head>
+    <body>
+        <div class="container">
+            <div class="title">Reconhecimento de embarcações regionais da amazonia</div>
+            <div class="content">
+              <div>
+                <img class="image" src="barco.jpg" alt="Imagem">
+                <form method="POST" enctype="multipart/form-data">
+                  <input type="file" name="file" accept="image/*">
+                  <input type="submit" class='button' value="Enviar">
+                </form>
+              </div>
+              <div class="text">
+                <h1>Tipo de embarcação</h1>
+                <div class="tipo">
+                    <h1 id="boat">Veleiro</h1>
+                </div>
+                
+                <h4>Precisão: 93,4%</h4>
+                <p>
+                Veleiro é um tipo de embarcação que possui<br>
+                como caracteristica uma variedade de objetos,<br>
+                relacionados ao texto texto texto texto texto<br>
+                texto texto texto texto texto texto texto texto<br>
+                texto texto texto texto texto texto texto texto<br>
+                texto texto texto texto texto texto texto texto<br>
+                texto texto texto texto texto texto texto texto<br>
+                texto texto texto texto texto texto texto texto<br></p>
+              </div>
+            </div>
+          </div>
+    </body>
+</html>

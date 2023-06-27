@@ -1,0 +1,124 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #b5f4bc;
+                height: 100vh;
+                margin: 0;
+                flex-direction: column;
+                justify-content: center;
+            }
+            
+            .container {
+                text-align: center;
+            }
+            
+            .rectangle {
+                width: 500px;
+                height: 200px;
+                background-color: #334f53;
+                border: 7px solid  white;
+                border-radius: 34px 34px;
+                margin: 0 ;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            
+            .question {
+                font-size: 25px;
+                margin-bottom: 20px;
+                color: white;
+                font-family: arial;
+                font-weight: bold;
+            }
+            
+            .button-container {
+                display: flex;
+                justify-content: center;
+            }
+            
+            .button {
+                margin: 0 10px;
+                padding: 10px 20px;
+                font-size: 18px;
+                border: none;
+                border-radius: 20px 20px;
+                background-color: #9acc77;
+                color: black;
+                font-weight: bold;
+                transition: background-color 0.4s ease;
+            }
+            
+            .button:hover{
+                background-color: black;
+                color: white;
+                transition: background-color 0.4s ease;
+            }
+
+            .logo{
+                height: 200px;
+                margin:0;
+                padding-bottom: 30px;
+            }
+
+            img{
+                height: 100%;
+                margin: 0 auto;
+            }
+            .criadores{
+                padding-top: 20px;
+                color: white;
+                font-size: 15px;
+                font-family: arial;
+                text-align: center;
+                text-decoration: none;
+                font-weight: bold;
+                color: #334f53;
+
+            }
+            a{
+                text-decoration: none;
+            }
+            
+            @media (max-width: 600px) {
+                .rectangle {
+                    width: 100%;
+            }
+                .question {
+                font-size: 20px;
+                margin-bottom: 20px;
+                color: white;
+                font-family: arial;
+            }
+                .button{
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+                color: black;
+            }
+
+            }
+        </style>
+    </head>
+<body>
+    <img src="./static/logo.jpg" class="logo">
+    <div class="container">
+        <div class="rectangle">
+            <div class="question">
+                Qual é o seu idioma?
+            </div>
+            <div class="button-container">
+                <button class="button" onclick="window.location.href='/pt/reconhecer'">Português</button>
+                <button class="button" onclick="window.location.href='/en/reconhecer'">English</button>
+            </div>
+        </div>
+    </div>
+    <div class="criadores">
+        <p>Desenvolvedor: <a href="https://www.linkedin.com/in/gustavotocantins/">Gustavo Tocantins</a></p>
+        <p>Design: <a href="https://www.linkedin.com/in/gustavotocantins/">Brenda Correa</a></p>
+    </div>
+
+</body></html>
