@@ -84,6 +84,17 @@
             a{
                 text-decoration: none;
             }
+
+            p{
+                padding-top: 20px;
+                color: white;
+                font-size: 15px;
+                font-family: arial;
+                text-align: center;
+                text-decoration: none;
+                font-weight: bold;
+                color: #334f53;
+            }
             
             @media (max-width: 600px) {
                 .rectangle {
@@ -98,24 +109,16 @@
                 .button{
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
                 color: black;
+                width: 40%;
             }
 
             }
         </style>
     </head>
 <body>
-    <img src="./static/logo.jpg" class="logo">
-    <div class="container">
-        <div class="rectangle">
-            <div class="question">
-                Qual é o seu idioma?
-            </div>
-            <div class="button-container">
-                <button class="button" onclick="window.location.href='/pt/reconhecer'">Português</button>
-                <button class="button" onclick="window.location.href='/en/reconhecer'">English</button>
-            </div>
-        </div>
-    </div>
+    <p>PROTÓTIPO</p>
+    <img src="./api/static/logo.jpg" class="logo">
+    <button class="button" onclick="window.location.href='/pt/reconhecer'">ENTRAR</button>
     <div class="criadores">
         <p>Desenvolvedor: <a href="https://www.linkedin.com/in/gustavotocantins/">Gustavo Tocantins</a></p>
         <p>Design: <a href="https://www.linkedin.com/in/gustavotocantins/">Brenda Correa</a></p>
