@@ -70,8 +70,9 @@
                 height: 100%;
                 margin: 0 auto;
             }
+
             .criadores{
-                padding-top: 20px;
+                padding-top: 40px;
                 color: white;
                 font-size: 15px;
                 font-family: arial;
@@ -79,14 +80,14 @@
                 text-decoration: none;
                 font-weight: bold;
                 color: #334f53;
-
             }
+
             a{
                 text-decoration: none;
             }
 
-            p{
-                padding-top: 20px;
+            .text-prototipo{
+                padding-bottom: 30px;
                 color: white;
                 font-size: 15px;
                 font-family: arial;
@@ -95,6 +96,7 @@
                 font-weight: bold;
                 color: #334f53;
             }
+
             
             @media (max-width: 600px) {
                 .rectangle {
@@ -116,12 +118,13 @@
         </style>
     </head>
 <body>
-    <p>PROTÓTIPO</p>
+    <p class="text-prototipo">PROTÓTIPO</p>
     <img src="{{ url_for('static', filename='logo.png') }}" class="logo">
     <button class="button" onclick="window.location.href='/pt/reconhecer'">ENTRAR</button>
+    <br>
     <div class="criadores">
-        <p>Desenvolvedor: <a href="https://www.linkedin.com/in/gustavotocantins/">Gustavo Tocantins</a></p>
-        <p>Design: <a href="https://www.linkedin.com/in/gustavotocantins/">Brenda Correa</a></p>
+        <p>Desenvolvedor: <a href="https://www.linkedin.com/in/gustavotocantins/" target="_blank">Gustavo Tocantins</a></p>
+        <p>Design: <a href="https://www.linkedin.com/in/brenda-corrêa-bb6585236/" target="_blank">Brenda Correa</a></p>
     </div>
 
 </body></html>
