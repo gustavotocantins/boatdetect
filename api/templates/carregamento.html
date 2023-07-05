@@ -61,7 +61,7 @@
             }
 
             .logo{
-                height: 260px;
+                height: 200px;
                 margin:0;
                 padding-bottom: 30px;
             }
@@ -70,9 +70,8 @@
                 height: 100%;
                 margin: 0 auto;
             }
-
             .criadores{
-                padding-top: 40px;
+                padding-top: 20px;
                 color: white;
                 font-size: 15px;
                 font-family: arial;
@@ -80,24 +79,20 @@
                 text-decoration: none;
                 font-weight: bold;
                 color: #334f53;
-            }
 
+            }
             a{
                 text-decoration: none;
             }
-
-            .text-prototipo{
-                padding-bottom: 20px;
-                color: white;
-                font-size: 25px;
-                font-family: arial;
-                text-align: center;
-                text-decoration: none;
-                font-weight: bold;
-                color: #334f53;
+            .carregar{
+                margin: 0 10px;
+                padding: 10px 20px;
+                font-size: 16px;
+                border: none;
+                border-radius: 20px 20px;
+                background-color: #9acc77;
+                color: black;
             }
-
-            
             @media (max-width: 600px) {
                 .rectangle {
                     width: 100%;
@@ -111,20 +106,33 @@
                 .button{
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
                 color: black;
-                width: 40%;
             }
 
             }
         </style>
     </head>
 <body>
-    <p class="text-prototipo">P R O T Ó T I P O</p>
     <img src="{{ url_for('static', filename='logo.png') }}" class="logo">
-    <button class="button" onclick="window.location.href='/pt/reconhecer'">ENTRAR</button>
-    <br>
+    <div class="container">
+        <div class="rectangle">
+            <div class="question">
+                Reconhecer imagem
+            </div>
+
+            <div>
+                <form method="POST" enctype="multipart/form-data">
+                  <input type="file" name="file" accept="image/*" class="carregar">
+                  <p>          </p>
+                  <br>
+                  <input type="submit" class='button' value="Processar imagem" onclick="window.location.href='/pt/informacoes'">
+                </form>
+              </div>
+            <div class="button-container">
+        </div>
+    </div>
     <div class="criadores">
-        <p>Desenvolvedor: <a href="https://www.linkedin.com/in/gustavotocantins/" target="_blank">Gustavo Tocantins</a></p>
-        <p>Desenvolvedora: <a href="https://www.linkedin.com/in/brenda-corrêa-bb6585236/" target="_blank">Brenda Correa</a></p>
+        <p>Desenvolvedor: <a href="https://www.linkedin.com/in/gustavotocantins/">Gustavo Tocantins</a></p>
+        <p>Desenvolvedora:: <a href="https://www.linkedin.com/in/gustavotocantins/">Brenda Correa</a></p>
     </div>
 
 </body></html>

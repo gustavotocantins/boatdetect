@@ -1,119 +1,139 @@
-<html><head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body{
-            background-color: #334f53;
-        }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    
-    .title {
-      text-align: center;
-      font-size: 40px;
-      font-weight: bold;
-      margin-bottom: 20px;
-      color:white;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-    .content {
-      display: flex;
-      align-items: center;
-    }
-    .image {
-      width: 400px;
-      height: auto;
-      margin-right: 20px;
-    }
-    .text {
-      font-size: 18px;
-    }
-    .button {
-      display: block;
-      padding: 10px 20px;
-      background-color: white;
-      color: black;
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: bold;
-      text-align: center;
-      text-decoration: none;
-      font-size: 16px;
-      border-radius: 5px;
-      margin-top: 10px;
-    }
-    h1{
-        color: white;
-        font-family: Arial, Helvetica, sans-serif;
-        
-    }
-    h4{
-        color: white;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-    p{
-        color: white;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-    .tipo{
-        background-color: aquamarine;
-        text-align: center;
-        height: 50px;
-    }
-    #boat{
-        color: black;
-        padding: 5px;
-        
-    }
-
-        @media (max-width: 600px) {
-            .rectangle {
-                width: 100%;
-            }
-            .question {
-            font-size: 20px;
-            margin-bottom: 20px;
-            color: white;
-            font-family: arial;
-        }
-            .button{
-             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-            }
-
-        }
-    </style>
-<style type="text/css"></style><style type="text/css" id="operaUserStyle"></style>
-</head>
-    <body>
-        <div class="container">
-            <div class="title">Reconhecimento de embarcações regionais da amazonia</div>
-            <div class="content">
-              <div>
-                <img class="image" src="barco.jpg" alt="Imagem">
-                <form method="POST" enctype="multipart/form-data">
-                  <input type="file" name="file" accept="image/*">
-                  <input type="submit" class='button' value="Enviar">
-                </form>
-              </div>
-              <div class="text">
-                <h1>Tipo de embarcação</h1>
-                <div class="tipo">
-                    <h1 id="boat">Veleiro</h1>
-                </div>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #b5f4bc;
                 
-                <h4>Precisão: 93,4%</h4>
-                <p>
-                Veleiro é um tipo de embarcação que possui<br>
-                como caracteristica uma variedade de objetos,<br>
-                relacionados ao texto texto texto texto texto<br>
-                texto texto texto texto texto texto texto texto<br>
-                texto texto texto texto texto texto texto texto<br>
-                texto texto texto texto texto texto texto texto<br>
-                texto texto texto texto texto texto texto texto<br>
-                texto texto texto texto texto texto texto texto<br></p>
-              </div>
-            </div>
-          </div>
-    </body>
+                margin: 0;
+                flex-direction: column;
+                justify-content: center;
+            }
+            
+            .container {
+                text-align: center;
+            }
+            
+
+            
+            .question {
+                font-size: 25px;
+                margin-bottom: 20px;
+                color: white;
+                font-family: arial;
+                font-weight: bold;
+            }
+            
+            .button-container {
+                display: flex;
+                justify-content: center;
+            }
+            
+            .button {
+                margin: 0 10px;
+                padding: 10px 20px;
+                font-size: 18px;
+                border: none;
+                border-radius: 20px 20px;
+                background-color: #334f53;
+                color: black;
+                font-weight: bold;
+                transition: background-color 0.4s ease;
+            }
+            
+            .button:hover{
+                background-color: black;
+                color: white;
+                transition: background-color 0.4s ease;
+            }
+
+            .logo{
+                height: 90px;
+                margin:0;
+            }
+
+            img{
+                height: 60%;
+                margin: 0 auto;
+            }
+
+            .criadores{
+                padding-top: 40px;
+                color: white;
+                font-size: 15px;
+                font-family: arial;
+                text-align: center;
+                text-decoration: none;
+                font-weight: bold;
+                color: #334f53;
+            }
+
+            a{
+                text-decoration: none;
+            }
+            .descricao{
+
+              font-size: 15px;
+              font-family: arial;
+              text-align: center;
+              width: 90%;
+            }
+
+            .text-prototipo{
+                padding-bottom: 20px;
+                color: white;
+                font-size: 25px;
+                font-family: arial;
+                text-align: center;
+                text-decoration: none;
+                font-weight: bold;
+                color: #334f53;
+            }
+            .tipobarco{
+              padding-bottom: 20px;
+              color: white;
+              font-size: 25px;
+              font-family: arial;
+              text-align: center;
+              text-decoration: none;
+              font-weight: bold;
+              color: #334f53;
+            }
+            .precisao{
+              color: white;
+              font-size: 15px;
+              font-family: arial;
+              text-align: center;
+              text-decoration: none;
+              font-weight: bold;
+              color: white;
+              background-color: #334f53;
+              padding: 20px;
+              border-radius: 50px;
+            }
+
+            
+            @media (max-width: 600px) {
+
+                .button{
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+                color: white;
+                width: 40%;
+            }
+
+            }
+        </style>
+    </head>
+<body>
+    <img src="{{ url_for('static', filename='logo.png') }}" class="logo">
+    <h1 class="tipobarco">C A N O A</h1>
+    <img src="{{ url_for('static', filename='barco.jpg') }}"">
+
+    <p class="precisao">Confiança: 93,3%</p>
+    <p class="descricao"><strong>A canoa</strong> é uma embarcação <strong>tradicionalmente utilizada</strong>  por diversas culturas ao<strong> redor do mundo.</strong> Com uma forma esbelta e alongada, é geralmente construída em<strong> madeira ou fibra de vidro,</strong> proporcionando<strong>leveza e facilidade de manuseio.</strong> Sua utilização varia desde atividades recreativas até fins de transporte, especialmente em<strong> rios e lagos.</strong> Comumente impulsionada por remos, a canoa oferece uma<strong> experiência tranquila e próxima à natureza,</strong> permitindo explorar belas paisagens aquáticas de forma serena. Seu<strong> design simples e eficiente</strong> a torna uma escolha popular para os amantes da aventura náutica</p>
+    <button class="button" onclick="window.location.href='/'">Voltar</button>
+</body>
 </html>

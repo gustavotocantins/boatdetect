@@ -24,37 +24,15 @@ def reconhecer():
         # Verifica se o usuário enviou um arquivo vazio
         if file.filename == '':
             return 'Nenhum arquivo selecionado.'
+        
+        return render_template('inicial.html')
 
-        imagem = Image.open(file).convert('L')  
-        imagem = imagem.resize((100, 100))
-        maxsize = 100,100
-        imagens = []
-        WIDTH, HEIGHT = imagem.size
-        if WIDTH != HEIGHT:
-                m_min_d = min(WIDTH, HEIGHT)
-                imagem = imagem.crop((0, 0, m_min_d, m_min_d))
-        imagem.thumbnail(maxsize, Image.ANTIALIAS)
-        imagens.append(np.asarray(imagem))
-            # Obtém o diretório do arquivo atual
-        train_images = np.asarray(imagens)
-        filename = url_for('static', filename='modelorede.pkl')
-        #filename = './static/modelorede.pkl'
-        train_images = train_images / 255
-        class_names = [ 'balsa', 'canoa', 'catraia','ferry boat','iate','navio','popopo','rabeta','veleiro','voadeira']
-        with open(filename, 'rb') as file:
-            model = load(file)
-        print(train_images.shape)
-        resultado = model.predict(train_images)
-        classe = np.argmax(resultado, axis = 1)
-
-        return f"A embarcação é uma {class_names[classe[0]]} com {resultado[0][classe[0]]*100} % de precisão"
-    
-    return render_template('inicial.html')
+    return render_template('carregamento.html')
 
 
-@app.route('/en/reconhecer')
+@app.route('/pt/informacoes')
 def reconhecer_en():
-    return 'Construir aplicação aqui em Inglês'
+    return render_template('inicial.html')
 
 if __name__ == '__main__':
     app.run()
