@@ -22,7 +22,8 @@ def index(nome,whatsapp,local,lider):
     except:
         pass
 
-    cred_obj = firebase_admin.credentials.Certificate(url_for('static', filename='credencial.json'))
+    cred_path = os.path.join(os.getcwd(), 'static', 'credencial.json')
+    cred_obj = firebase_admin.credentials.Certificate(cred_path)
     default_app = firebase_admin.initialize_app(cred_obj, {
         'databaseURL':'https://assistocantinsreserva-default-rtdb.firebaseio.com/'
         })      
