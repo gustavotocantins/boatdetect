@@ -40,7 +40,7 @@ def index(nome,whatsapp,local,lider):
     # Referência para a coleção (nó) chamada 'usuarios' no caminho raiz
     ref_usuarios = db.reference(f'/')
 
-    novo_usuario =[nome,whatsapp,local]
+    novo_usuario =[nome,local,whatsapp]
 
     ref_usuarios.child(lider).set({
     novo_usuario[1]: f'["{novo_usuario[0]}","{novo_usuario[1]}","{novo_usuario[2]}"]'
