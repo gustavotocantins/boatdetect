@@ -10,29 +10,19 @@ app = Flask(__name__)
 app.static_folder = 'static'
 @app.route('/')
 def index():
-    return render_template('index.html')
+    import firebase_admin
+    from firebase_admin import credentials
+    from firebase_admin import db
+    try:
+        firebase_admin.delete_app(firebase_admin.get_app())
+    except:
+        pass
+    cred_obj = firebase_admin.credentials.Certificate("static/assistocantinsreserva-firebase-adminsdk-6aigg-f0de950f0a.json")
+    default_app = firebase_admin.initialize_app(cred_obj, {
+        'databaseURL':'https://assistocantinsreserva-default-rtdb.firebaseio.com/'
+        })      
+    ref = db.reference()
+    
+    data = ref.get()
+    return data
 
-@app.route('/pt/reconhecer', methods=['GET', 'POST'])
-def reconhecer():
-    if request.method == 'POST':
-        # Verifica se o arquivo foi enviado
-        if 'file' not in request.files:
-            return 'Nenhum arquivo selecionado.'
-        
-        file = request.files['file']
-        
-        # Verifica se o usuário enviou um arquivo vazio
-        if file.filename == '':
-            return 'Nenhum arquivo selecionado.'
-        
-        return render_template('inicial.html')
-
-    return render_template('carregamento.html')
-
-
-@app.route('/pt/informacoes')
-def reconhecer_en():
-    return render_template('inicial.html')
-
-if __name__ == '__main__':
-    app.run()
