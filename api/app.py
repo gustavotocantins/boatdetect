@@ -8,7 +8,7 @@ from os import chdir
 import os
 app = Flask(__name__)
 app.static_folder = 'static'
-@app.route('/')
+
 @app.route('/<nome>/<whatsapp>/<local>/<lider>')
 def index(nome,whatsapp,local,lider):
     import firebase_admin
@@ -35,7 +35,7 @@ def index(nome,whatsapp,local,lider):
         'databaseURL':'https://assistocantinsreserva-default-rtdb.firebaseio.com/'
         })      
     # Referência para a coleção (nó) chamada 'usuarios' no caminho raiz
-    ref_usuarios = db.reference(f'/{lider}')
+    ref_usuarios = db.reference(f'/{lider}/{whatsapp}')
 
     # Dados a serem adicionados'
     novo_usuario ={
@@ -44,7 +44,6 @@ def index(nome,whatsapp,local,lider):
         'local': local
     }
     ref_usuarios.push().set(novo_usuario)
-    ref = db.reference()
 
     return f"O {nome} foi adicionado a base de dados!"
 
