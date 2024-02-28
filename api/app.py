@@ -35,7 +35,7 @@ def index(nome,whatsapp,local,lider):
         'databaseURL':'https://assistocantinsreserva-default-rtdb.firebaseio.com/'
         })      
     # Referência para a coleção (nó) chamada 'usuarios' no caminho raiz
-    ref_usuarios = db.reference(r'/{lider}')
+    ref_usuarios = db.reference(f'/{lider}')
 
     # Dados a serem adicionados'
     novo_usuario ={
