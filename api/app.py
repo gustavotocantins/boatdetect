@@ -11,6 +11,9 @@ app.static_folder = 'static'
 
 @app.route('/<nome>/<whatsapp>/<local>/<lider>')
 def index(nome,whatsapp,local,lider):
+    nome = nome.replace('%20', ' ')
+    lider = lider.replace('%20', ' ')
+    local = local.replace('%20', ' ')
     import firebase_admin
     from firebase_admin import credentials
     from firebase_admin import db
