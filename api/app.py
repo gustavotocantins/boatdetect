@@ -43,7 +43,7 @@ def index(nome,whatsapp,local,lider):
         'whatsapp': whatsapp,
         'local': local
     }
-    ref_usuarios.push().set(novo_usuario)
+    ref_usuarios.child(whatsapp).set(novo_usuario)
 
     return f"O {nome} foi adicionado a base de dados!"
 
