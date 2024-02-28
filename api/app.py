@@ -9,8 +9,8 @@ import os
 app = Flask(__name__)
 app.static_folder = 'static'
 @app.route('/')
-
-def index():
+@app.route('/<nome>/<whatsapp>/<local>/<lider>')
+def index(nome,whatsapp,local,lider):
     import firebase_admin
     from firebase_admin import credentials
     from firebase_admin import db
@@ -34,8 +34,17 @@ def index():
     default_app = firebase_admin.initialize_app(cred_obj, {
         'databaseURL':'https://assistocantinsreserva-default-rtdb.firebaseio.com/'
         })      
+    # Referência para a coleção (nó) chamada 'usuarios' no caminho raiz
+    ref_usuarios = db.reference(r'/{lider}')
+
+    # Dados a serem adicionados'
+    novo_usuario ={
+        'nome': nome,
+        'whatsapp': whatsapp,
+        'local': local
+    }
+    ref_usuarios.push().set(novo_usuario)
     ref = db.reference()
 
-    data = ref.get()
-    return data
+    return f"O {nome} foi adicionado a base de dados!"
 
