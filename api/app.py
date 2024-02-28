@@ -36,14 +36,14 @@ def index(nome,whatsapp,local,lider):
         })      
     # Referência para a coleção (nó) chamada 'usuarios' no caminho raiz
     ref_usuarios = db.reference(f'/{lider}/{whatsapp}')
+    
+    novo_usuario =[nome,whatsapp,local]
 
-    # Dados a serem adicionados'
-    novo_usuario ={
-        'nome': nome,
-        'whatsapp': whatsapp,
-        'local': local
-    }
-    ref_usuarios.child(whatsapp).set(novo_usuario)
+    ref_usuarios.child(novo_usuario[1]).set({
+    'nome': novo_usuario[0],
+    'whatsapp': novo_usuario[1],
+    'local': novo_usuario[2]
+})
 
     return f"O {nome} foi adicionado a base de dados!"
 
