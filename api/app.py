@@ -43,7 +43,7 @@ def index(nome,whatsapp,local,lider):
     novo_usuario =[nome,whatsapp,local]
 
     ref_usuarios.child(lider).set({
-    novo_usuario[1]: f'"["{novo_usuario[0]}","{novo_usuario[1]}","{novo_usuario[2]}"]'
+    novo_usuario[1]: f'["{novo_usuario[0]}","{novo_usuario[1]}","{novo_usuario[2]}"]'
 })
 
     return f"O {nome} foi adicionado a base de dados!"
