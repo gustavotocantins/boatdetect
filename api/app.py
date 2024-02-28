@@ -38,14 +38,12 @@ def index(nome,whatsapp,local,lider):
         'databaseURL':'https://assistocantinsreserva-default-rtdb.firebaseio.com/'
         })      
     # Referência para a coleção (nó) chamada 'usuarios' no caminho raiz
-    ref_usuarios = db.reference(f'/{lider}')
+    ref_usuarios = db.reference(f'/')
 
     novo_usuario =[nome,whatsapp,local]
 
-    ref_usuarios.child(novo_usuario[1]).set({
-    'nome': novo_usuario[0],
-    'whatsapp': novo_usuario[1],
-    'local': novo_usuario[2]
+    ref_usuarios.child(lider).set({
+    novo_usuario[1]: f'"["{novo_usuario[0]}","{novo_usuario[1]}","{novo_usuario[2]}"]'
 })
 
     return f"O {nome} foi adicionado a base de dados!"
