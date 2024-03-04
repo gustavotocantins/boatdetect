@@ -23,17 +23,15 @@ def index(nome,whatsapp,local,lider):
     except:
         pass
 
-    # Obtém as credenciais do ambiente
     firebase_credentials = os.getenv('FIREBASE_CREDENTIALS')
 
-    # Converte as credenciais de string JSON para um dicionário
     cred_dict = json.loads(firebase_credentials)
     cred_obj = firebase_admin.credentials.Certificate(cred_dict)
-    
+
     default_app = firebase_admin.initialize_app(cred_obj, {
         'databaseURL':'https://assistocantinsreserva-default-rtdb.firebaseio.com/'
         })      
-    # Referência para a coleção (nó) chamada 'usuarios' no caminho raiz
+    
     ref_usuarios = db.reference(f'/')
 
     novo_usuario =[nome,whatsapp,local]
